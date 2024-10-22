@@ -1,0 +1,54 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Voiture{
+private:
+//attributs
+string marque;
+string modele;
+int annee;
+float kilometrage;
+float vitesse;
+
+public:
+//constructeur 1 sans arguments
+Voiture(): marque("Inconnue"),modele("Inconnu"),annee(0),kilometrage(0.0),vitesse(0.0){}
+//constructeur 2 avec cinq arguments
+Voiture(string m, string md, int a, float km, float v): marque(m),modele(md),annee(a),kilometrage(km),vitesse(v){}
+//méthodes
+void accelerer(float valeur);
+void freiner(float valeur);
+void afficherInfo();
+void avancer(float distance);
+//destructeur
+~Voiture(){
+cout<<"La voiture "<<marque<<" "<<modele<<" est détruite."<<endl ;
+}
+};
+
+void Voiture ::accelerer(float valeur){
+    cout<<"Donner la vitesse actuelle de la voiture : "<<vitesse<<endl ;
+    vitesse += valeur;
+    cout<<"La vitesse actuelle après accélération est : "<<vitesse<<endl ;
+}
+
+void Voiture ::freiner(float valeur){
+    cout<<"Donner la vitesse actuelle de la voiture : "<<vitesse<<endl ;
+    vitesse -= valeur;
+    cout<<"La vitesse actuelle après freinage est : "<<vitesse<<endl ;
+}
+
+void Voiture ::afficherInfo(){
+    cout<<"La marque de la voiture est : "<<marque<<endl ;
+    cout<<"Le modèle de la voiture est : "<<modele<<endl ;
+    cout<<"L’année de la voiture est : "<<annee<<endl ;
+    cout<<"Le kilométrage de la voiture est : "<<kilometrage<<endl ;
+    cout<<"La vitesse de la voiture est : "<<vitesse<<endl ;
+}
+
+void Voiture ::avancer(float distance){
+    cout<<"Donner le kilométrage de la vitesse : "<<kilometrage<<endl ;
+    kilometrage += distance;
+    cout << "Le kilométrage actuel après déplacement est : " << kilometrage << endl;
+}
